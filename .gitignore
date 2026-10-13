@@ -1,0 +1,14 @@
+installers/
+*.log
+.env
+.env.*
+!.env.example
+__pycache__/
+secrets/
+*.token
+.local-only/
+/NAS-연결-사전점검.md
+*.pem
+*.key
+*.p12
+*.pfx

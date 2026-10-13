@@ -1,0 +1,8 @@
+# Windows에서 복제해도 WSL용 스크립트와 설정의 줄바꿈을 유지합니다.
+* text=auto
+*.sh text eol=lf
+*.yml text eol=lf
+*.conf text eol=lf
+*.py text eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf

@@ -1,0 +1,21 @@
+{
+  "CheckedDate": "2026-10-13",
+  "Image": "ghcr.io/nginx/nginx-unprivileged",
+  "SourceTag": "stable-alpine",
+  "IndexDigest": "sha256:56b8272e43a0525f67aed68d1e0794a712d10e3e45a563e118e9a77c817e6f86",
+  "PlatformDigest": "sha256:0f5f7068c5f5bf7046dbf649a08810ec1693967a9f488b8ff3998be6dd34bf6c",
+  "OS": "linux",
+  "Architecture": "amd64",
+  "ImageUser": "101",
+  "ImageEnvironment": [
+    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "NGINX_VERSION=1.30.5",
+    "PKG_RELEASE=1",
+    "DYNPKG_RELEASE=1",
+    "NJS_VERSION=1.0.1",
+    "NJS_RELEASE=1"
+  ],
+  "ComposeSchemaSource": "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json",
+  "ComposeSchemaSHA256": "D61CC3DF8C6E6A727043E84F3405C69FFD63D341F629DB8480F1D2EE5405B10C",
+  "RuntimeExecuted": false
+}

@@ -1,0 +1,11 @@
+{
+  "ingress": [
+    {
+      "hostname": "www.example.com",
+      "service": "http://public-web:8080"
+    },
+    {
+      "service": "http_status:404"
+    }
+  ]
+}

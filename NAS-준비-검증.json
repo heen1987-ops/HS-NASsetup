@@ -1,0 +1,34 @@
+[
+  {
+    "Test": "PowerShell 구문 및 UTF-8 BOM",
+    "Passed": true
+  },
+  {
+    "Test": "기본 실행은 계획만 표시",
+    "Passed": true
+  },
+  {
+    "Test": "WhatIf에서 네트워크·인증·변경 호출 없음",
+    "Passed": true
+  },
+  {
+    "Test": "기존 N 드라이브 보호",
+    "Passed": true
+  },
+  {
+    "Test": "URL 입력 거부",
+    "Passed": true
+  },
+  {
+    "Test": "Connect 없는 폴더 생성 거부",
+    "Passed": true
+  },
+  {
+    "Test": "통신 실패 시 인증·연결 중단 (모의)",
+    "Passed": true
+  },
+  {
+    "Test": "통신 검사만 실행하면 인증·매핑 없음 (모의)",
+    "Passed": true
+  }
+]

@@ -1,0 +1,72 @@
+# 공개 웹사이트용 별도 프로젝트 초안. 배포·터널 연결은 아직 실행하지 않았습니다.
+# 공개용 DNS 경로는 Cloudflare 대시보드에서 http://public-web:8080 으로 지정합니다.
+services:
+  public-web:
+    image: ghcr.io/nginx/nginx-unprivileged@sha256:56b8272e43a0525f67aed68d1e0794a712d10e3e45a563e118e9a77c817e6f86
+    platform: linux/amd64
+    user: "101:101"
+    entrypoint: ["nginx"]
+    command: ["-g", "daemon off;"]
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [web-origin]
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m,mode=1777
+    cpus: 0.5
+    mem_limit: 128m
+    pids_limit: 64
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+  cloudflared:
+    image: cloudflare/cloudflared@sha256:9b49eed8f62806d5d45ddf59ecefb5710429598ea6d3fcccd2af938f621b2b07
+    platform: linux/amd64
+    user: "65532:65532"
+    entrypoint: ["cloudflared"]
+    command: ["tunnel", "--no-autoupdate", "run", "--token-file", "/run/secrets/cloudflare_tunnel_token"]
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [tunnel-egress, web-origin]
+    depends_on:
+      public-web:
+        condition: service_healthy
+    secrets:
+      - cloudflare_tunnel_token
+    cpus: 0.5
+    mem_limit: 256m
+    pids_limit: 64
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+networks:
+  # Cloudflare로 나가는 연결용입니다. NAS 호스트 포트는 게시하지 않습니다.
+  tunnel-egress:
+    driver: bridge
+  web-origin:
+    driver: bridge
+    internal: true
+
+secrets:
+  cloudflare_tunnel_token:
+    file: ${TUNNEL_TOKEN_FILE:?NAS의 보호된 토큰 파일 경로를 지정하세요}

@@ -1,0 +1,11 @@
+{
+  "checked_date": "2026-10-13",
+  "nginx_image": "ghcr.io/nginx/nginx-unprivileged@sha256:56b8272e43a0525f67aed68d1e0794a712d10e3e45a563e118e9a77c817e6f86",
+  "cloudflared_image": "cloudflare/cloudflared@sha256:9b49eed8f62806d5d45ddf59ecefb5710429598ea6d3fcccd2af938f621b2b07",
+  "cloudflared_linux_amd64_digest": "sha256:1a50cc8893b3f0dd283805d2efcd3336210aced60a83d967fb2bbc8ab69b5f35",
+  "cloudflared_user": "65532:65532",
+  "cloudflared_upstream": "https://github.com/cloudflare/cloudflared",
+  "token_file_documentation": "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/run-parameters/",
+  "runtime_tested": false,
+  "tunnel_created": false
+}

@@ -1,0 +1,155 @@
+{
+  "검사시각": "2026-10-13T10:51:51.274380+00:00",
+  "환경": "이 PC의 Ubuntu WSL2. 실제 Synology NAS 검증 아님.",
+  "검사": [
+    {
+      "항목": "Docker Engine 응답",
+      "통과": true,
+      "근거": "29.9.0"
+    },
+    {
+      "항목": "Docker Compose 실행",
+      "통과": true,
+      "근거": "Docker Compose version v5.6.0"
+    },
+    {
+      "항목": "사설 점검 실행 및 Healthy",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "사설 점검 비root UID 설정",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "사설 점검 읽기 전용 루트",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "사설 점검 권한 제한",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "사설 점검 자원 제한",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "사설 점검 설정 파일만 읽기 전용 마운트",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "사설 점검 포트는 loopback 전용",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "사설 점검 Nginx 설정 검사",
+      "통과": true,
+      "근거": "nginx: the configuration file /etc/nginx/nginx.conf syntax is ok\nnginx: configuration file /etc/nginx/nginx.conf test is successful"
+    },
+    {
+      "항목": "사설 점검 healthz 실제 응답",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "공개 웹 내부 시험 실행 및 Healthy",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "공개 웹 내부 시험 비root UID 설정",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "공개 웹 내부 시험 읽기 전용 루트",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "공개 웹 내부 시험 권한 제한",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "공개 웹 내부 시험 자원 제한",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "공개 웹 내부 시험 설정 파일만 읽기 전용 마운트",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "공개 웹의 호스트 게시 포트 없음",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "공개 웹은 전용 네트워크 하나만 사용",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "공개 웹 내부 시험 Nginx 설정 검사",
+      "통과": true,
+      "근거": "nginx: the configuration file /etc/nginx/nginx.conf syntax is ok\nnginx: configuration file /etc/nginx/nginx.conf test is successful"
+    },
+    {
+      "항목": "공개 웹 내부 시험 healthz 실제 응답",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "공개 웹 네트워크 internal 적용",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "준비 중 공개 웹은 DNS 이름으로 접속 시 503",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "실제 cloudflared 터널 컨테이너 없음",
+      "통과": true,
+      "근거": ""
+    },
+    {
+      "항목": "Windows HTTP /healthz",
+      "통과": true,
+      "근거": "상태 200"
+    },
+    {
+      "항목": "Windows HTTP /",
+      "통과": true,
+      "근거": "상태 200"
+    },
+    {
+      "항목": "Windows HTTP /does-not-exist",
+      "통과": true,
+      "근거": "상태 404"
+    },
+    {
+      "항목": "cloudflared 네트워크 없이 실행",
+      "통과": true,
+      "근거": "cloudflared version 2026.10.0 (built 2026-10-05-17:58 UTC)"
+    },
+    {
+      "항목": "cloudflared token-file 지원",
+      "통과": true,
+      "근거": ""
+    }
+  ],
+  "통과수": 29,
+  "전체수": 29,
+  "NAS실기검증": "미실행: NAS 배송 전",
+  "인터넷공개": "미실행: 도메인 및 터널 없음"
+}
